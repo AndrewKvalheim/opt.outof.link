@@ -1,0 +1,9 @@
+# Bundler
+/.bundle
+
+# Middleman
+/build
+
+# Sass, Sprockets
+/.cache
+/.sass-cache
