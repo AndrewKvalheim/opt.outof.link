@@ -10,6 +10,7 @@ GEM
     celluloid (0.16.0)
       timers (~> 4.0.0)
     chunky_png (1.3.1)
+    coderay (1.1.0)
     coffee-script (2.3.0)
       coffee-script-source
       execjs
@@ -42,6 +43,7 @@ GEM
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
+    method_source (0.8.2)
     middleman (3.3.6)
       coffee-script (~> 2.2)
       compass (>= 1.0.0, < 2.0.0)
@@ -65,6 +67,9 @@ GEM
       rack-test (~> 0.6.2)
       thor (>= 0.15.2, < 2.0)
       tilt (~> 1.4.1, < 2.0)
+    middleman-pry (0.0.4)
+      middleman-core (~> 3.2)
+      pry (~> 0.9)
     middleman-sprockets (3.3.10)
       middleman-core (~> 3.3)
       sprockets (~> 2.12.1)
@@ -78,6 +83,10 @@ GEM
       tilt (~> 1.4.1)
     padrino-support (0.12.3)
       activesupport (>= 3.1)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -85,6 +94,7 @@ GEM
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
     sass (3.4.5)
+    slop (3.6.0)
     sprockets (2.12.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -112,3 +122,4 @@ PLATFORMS
 
 DEPENDENCIES
   middleman (~> 3.3.6)
+  middleman-pry
