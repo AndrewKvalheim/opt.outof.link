@@ -1,0 +1,5 @@
+base: !ruby/object:URI::HTTPS
+  scheme: https
+  host: opt.outof.link
+  path: ''
+region: us-west-2
