@@ -1,0 +1,21 @@
+= wrap_layout :layout do
+  .feature
+    %article.text
+      %aside.memo-heading
+        %dl
+          %dt To
+          %dd
+            %em= current_page.data.to
+
+          %dt From
+          %dd
+            %em= current_page.data.from
+
+          %dt Date
+          %dd
+            :javascript
+              var date = new Date();
+              document.write(date.toJSON().slice(0, 10));
+            %noscript
+              %em Today
+      = yield

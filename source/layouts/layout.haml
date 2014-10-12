@@ -1,0 +1,26 @@
+!!!
+%html
+  %head
+    // Configuration
+    %meta{charset: 'utf-8'}
+    %meta{'http-equiv' => 'X-UA-Compatible', 'content' => 'IE=edge'}
+    %meta{name: 'viewport', content: 'width=device-width, initial-scale=1'}
+
+    // Metadata
+    %title= current_page.data.title
+    %meta{name: 'description', content: current_page.data.description}
+    - if indexable?
+      %link{rel: 'canonical', href: absolute_url}
+    - else
+      %meta{name: 'robots', content: 'noindex'}
+
+    // Assets
+    = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic'
+    = inline_stylesheet 'main'
+  %body.page
+    // Main content
+    = yield
+
+    // Meta content
+    %footer.meta
+      .text= partial 'disclaimer'
