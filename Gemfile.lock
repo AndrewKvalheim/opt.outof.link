@@ -23,6 +23,35 @@ GIT
       middleman-core (>= 3.0.0)
       parallel
 
+GIT
+  remote: git://github.com/AndrewKvalheim/middleman.git
+  revision: 21c410d05016bfbd559b575e9236678e28fa98b8
+  branch: minify-proxied
+  specs:
+    middleman (3.3.6)
+      coffee-script (~> 2.2)
+      compass (>= 1.0.0, < 2.0.0)
+      compass-import-once (= 1.0.5)
+      execjs (~> 2.0)
+      haml (>= 4.0.5)
+      kramdown (~> 1.2)
+      middleman-core (= 3.3.6)
+      middleman-sprockets (>= 3.1.2)
+      sass (>= 3.4.0, < 4.0)
+      uglifier (~> 2.5)
+    middleman-core (3.3.6)
+      activesupport (~> 4.1.0)
+      bundler (~> 1.1)
+      erubis
+      hooks (~> 0.3)
+      i18n (~> 0.6.9)
+      listen (>= 2.7.9, < 3.0)
+      padrino-helpers (~> 0.12.3)
+      rack (>= 1.4.5, < 2.0)
+      rack-test (~> 0.6.2)
+      thor (>= 0.15.2, < 2.0)
+      tilt (~> 1.4.1, < 2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -131,29 +160,6 @@ GEM
       curb-fu (~> 0.6.2)
       signet (~> 0.4.5)
     method_source (0.8.2)
-    middleman (3.3.6)
-      coffee-script (~> 2.2)
-      compass (>= 1.0.0, < 2.0.0)
-      compass-import-once (= 1.0.5)
-      execjs (~> 2.0)
-      haml (>= 4.0.5)
-      kramdown (~> 1.2)
-      middleman-core (= 3.3.6)
-      middleman-sprockets (>= 3.1.2)
-      sass (>= 3.4.0, < 4.0)
-      uglifier (~> 2.5)
-    middleman-core (3.3.6)
-      activesupport (~> 4.1.0)
-      bundler (~> 1.1)
-      erubis
-      hooks (~> 0.3)
-      i18n (~> 0.6.9)
-      listen (>= 2.7.9, < 3.0)
-      padrino-helpers (~> 0.12.3)
-      rack (>= 1.4.5, < 2.0)
-      rack-test (~> 0.6.2)
-      thor (>= 0.15.2, < 2.0)
-      tilt (~> 1.4.1, < 2.0)
     middleman-minify-html (3.4.0)
       htmlcompressor (~> 0.1.0)
       middleman-core (>= 3.2)
@@ -239,7 +245,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  middleman (~> 3.3.6)
+  middleman!
   middleman-cdn!
   middleman-minify-html
   middleman-pry
