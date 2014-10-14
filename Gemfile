@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 # Pending middleman/middleman#1393
 gem 'middleman', github: 'AndrewKvalheim/middleman',
                  branch: 'minify-proxied'
+# Pending porada/middleman-autoprefixer#13
+gem 'middleman-autoprefixer', github: 'AndrewKvalheim/middleman-autoprefixer',
+                              branch: 'content-type'
 # Pending leighmcculloch/middleman-cdn#1
 gem 'middleman-cdn', github: 'AndrewKvalheim/middleman-cdn',
                      branch: 'accept-file-list'

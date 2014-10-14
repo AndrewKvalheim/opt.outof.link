@@ -30,6 +30,16 @@ end
 redirect '/humans.txt', data.routing.github
 
 #
+# Content
+#
+
+activate :autoprefixer do |config|
+  # Workaround for porada/middleman-autoprefixer#12
+  config.browsers = ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']
+  config.inline = true
+end
+
+#
 # Deployment
 #
 

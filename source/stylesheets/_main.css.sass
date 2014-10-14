@@ -1,5 +1,4 @@
 @import compass/reset
-@import compass/css3/flexbox
 
 //
 // Layout
@@ -10,24 +9,24 @@
     @content
 
 .feature
-  +align-items(center)
-  +display-flex
-  +flex(1)
-  +flex-direction(column)
-  +justify-content(center)
+  align-items: center
+  display: flex
+  flex-direction: column
+  flex: 1
+  justify-content: center
 
 .meta
-  +align-items(center)
-  +display-flex
-  +flex-direction(column)
+  align-items: center
   background-color: rgba(black, 0.05)
+  display: flex
+  flex-direction: column
 
 .page
-  +align-items(stretch)
-  +display-flex
-  +flex-direction(column)
-  +justify-content(stretch)
+  align-items: stretch
   background-color: white
+  display: flex
+  flex-direction: column
+  justify-content: stretch
   min-height: 100vh
 
 .text
