@@ -1,33 +1,29 @@
 require 'active_support'
 require 'active_support/core_ext'
+require 'helpers/content_helpers'
 require 'lib/deployment_helpers'
+
+extend DeploymentHelpers
+helpers ContentHelpers
 
 #
 # Routing
 #
 
-# Unique asset URLs
-activate :asset_hash
+# Pretty home path
+proxy data.routing.home, config.index_file, ignore: true
 
-# Home path
-proxy data.routing.home,
-      File.join(config.http_prefix, config.index_file),
-      ignore: true
-
-# Root path, home path with trailing slash
+# Redirects
 activate :s3_redirect do |s3|
   s3.bucket      = data.deployment.base.host
   s3.region      = data.deployment.region
   s3.after_build = false
 end
-data.deployment.base.merge(data.routing.home).tap do |home|
-  [config.http_prefix, data.routing.home].each do |path|
-    redirect File.join(path, config.index_file), home
-  end
-end
-
-# Humans
+redirect config.http_prefix, absolute_url(data.routing.home)
 redirect '/humans.txt', data.routing.github
+
+# Unique asset URLs
+activate :asset_hash
 
 #
 # Content
@@ -42,8 +38,6 @@ end
 #
 # Deployment
 #
-
-helpers DeploymentHelpers
 
 # Optimization
 configure :build do
