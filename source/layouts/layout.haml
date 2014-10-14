@@ -14,7 +14,7 @@
     - else
       %meta{name: 'robots', content: 'noindex'}
 
-    // Assets
+    // Early-loaded assets
     = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic'
     = inline_stylesheet 'main'
   %body.page
@@ -24,3 +24,6 @@
     // Meta content
     %footer.meta
       .text= partial 'disclaimer'
+
+    // Late-loaded assets
+    = inline_javascript 'analytics'
