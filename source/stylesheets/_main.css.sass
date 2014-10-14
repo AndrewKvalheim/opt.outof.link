@@ -1,18 +1,30 @@
 @import compass/reset
 
 //
-// Layout
+// Configuration
 //
 
+$text-width: 8.5in - 2in
+$feature-whitespace: 1in
+$whitespace: 0.25in
+
 =large
-  @media (min-width: 600px)
+  @media (min-width: $text-width), (min-height: 11in - 2in)
     @content
+
+=with-feature-whitespace
+  @media (min-width: $text-width + $feature-whitespace * 2)
+    @content
+
+//
+// Layout
+//
 
 .feature
   align-items: center
   display: flex
+  flex-grow: 1
   flex-direction: column
-  flex: 1
   justify-content: center
 
 .meta
@@ -26,17 +38,14 @@
   background-color: white
   display: flex
   flex-direction: column
-  justify-content: stretch
   min-height: 100vh
 
 .text
-  max-width: 40rem
+  max-width: $text-width
 
 //
 // Typography
 //
-
-$whitespace: 1em
 
 a
   color: #249FFF
@@ -51,19 +60,16 @@ body
     font-size: 18pt
 
 dl, p
-  margin-bottom: $whitespace
+  &:not(:last-child)
+    margin-bottom: 1em
 
 em
   font-style: italic
 
-.main
-  +large
-    padding: $whitespace * 2
-
 .memo-heading
   $left-column: 3em
 
-  margin-bottom: $whitespace * 2
+  margin-bottom: 2em
 
   dt
     clear: left
@@ -84,4 +90,8 @@ em
   font-style: italic
 
 .text
-  padding: $whitespace $whitespace 0 $whitespace
+  margin: 1em
+
+  .feature &
+    +with-feature-whitespace
+      margin: $feature-whitespace
