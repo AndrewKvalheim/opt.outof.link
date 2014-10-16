@@ -6,5 +6,5 @@ module ContentHelpers
 
   def indexable?
     current_page.data.fetch('indexable', true)
-  end  
+  end
 end
