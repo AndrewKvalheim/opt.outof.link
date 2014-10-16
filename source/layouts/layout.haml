@@ -23,7 +23,10 @@
 
     // Meta content
     %footer.meta
-      .text= partial 'disclaimer'
+      .text
+        %p
+          = partial 'disclaimer'
+          %span.muted= link_to 'Edit this site.', data.routing.github
 
     // Late-loaded assets
     = inline_javascript 'analytics'
