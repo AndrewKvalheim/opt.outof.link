@@ -11,5 +11,6 @@ gem 'middleman-cdn', github: 'AndrewKvalheim/middleman-cdn',
                      branch: 'accept-file-list'
 gem 'middleman-minify-html'
 gem 'middleman-pry'
-gem 'middleman-s3_redirect', '~> 3.0.5'
+gem 'middleman-s3_redirect', github: 'AndrewKvalheim/middleman-s3_redirect',
+                             branch: 'mutation'
 gem 'middleman-s3_sync', '~> 3.0.35'

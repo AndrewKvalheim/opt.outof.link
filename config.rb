@@ -19,7 +19,7 @@ activate :s3_redirect do |s3|
   s3.region      = data.deployment.region
   s3.after_build = false
 end
-redirect config.http_prefix, absolute_url(data.routing.home)
+redirect http_prefix, absolute_url(data.routing.home)
 redirect '/humans.txt', data.routing.github
 
 # Unique asset URLs

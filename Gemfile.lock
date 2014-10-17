@@ -23,6 +23,16 @@ GIT
       middleman-core (~> 3.0)
 
 GIT
+  remote: git://github.com/AndrewKvalheim/middleman-s3_redirect.git
+  revision: e807d048df35f7e8e66c765e981f4f7632652e64
+  branch: mutation
+  specs:
+    middleman-s3_redirect (3.0.5)
+      fog (>= 1.10.1)
+      middleman-core (>= 3.0.0)
+      parallel
+
+GIT
   remote: git://github.com/AndrewKvalheim/middleman.git
   revision: 17225929c8d005e622db385cdb60dc775787679a
   branch: minify-proxied
@@ -167,10 +177,6 @@ GEM
     middleman-pry (0.0.4)
       middleman-core (~> 3.2)
       pry (~> 0.9)
-    middleman-s3_redirect (3.0.5)
-      fog (>= 1.10.1)
-      middleman-core (>= 3.0.0)
-      parallel
     middleman-s3_sync (3.0.35)
       colorize
       fog (>= 1.10.1)
@@ -255,5 +261,5 @@ DEPENDENCIES
   middleman-cdn!
   middleman-minify-html
   middleman-pry
-  middleman-s3_redirect (~> 3.0.5)
+  middleman-s3_redirect!
   middleman-s3_sync (~> 3.0.35)
