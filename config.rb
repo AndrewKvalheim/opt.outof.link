@@ -11,7 +11,7 @@ helpers ContentHelpers
 #
 
 # Pretty home path
-proxy data.routing.home, config.index_file, ignore: true
+proxy data.routes.home, config.index_file, ignore: true
 
 # Redirects
 activate :s3_redirect do |s3|
@@ -19,8 +19,11 @@ activate :s3_redirect do |s3|
   s3.region      = data.deployment.region
   s3.after_build = false
 end
-redirect http_prefix, absolute_url(data.routing.home)
-redirect '/humans.txt', data.routing.github
+data.redirects.each do |destination, sources|
+  sources.each do |source|
+    redirect source, data.routes[destination]
+  end
+end
 
 # Unique asset URLs
 activate :asset_hash
@@ -52,7 +55,7 @@ activate :s3_sync do |s3|
   s3.bucket = data.deployment.base.host
   s3.region = data.deployment.region
 end
-content_type data.routing.home, 'text/html'
+content_type data.routes.home, 'text/html'
 
 # Caching
 default_caching_policy max_age: 1.year, public: true
