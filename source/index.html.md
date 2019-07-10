@@ -18,4 +18,4 @@ please let me know and I'll be happy to provide them.
 Thank you, and have a wonderful day!
 
 
-  [Do Not Contact]: https://help.linkedin.com/app/answers/detail/a_id/426/
+  [Do Not Contact]: https://www.linkedin.com/psettings/guest-email-unsubscribe
